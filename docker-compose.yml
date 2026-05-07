@@ -36,6 +36,8 @@ services:
 
   # Redis Cache
   redis:
+    env_file:
+      - .env.docker      
     image: redis:7-alpine
     container_name: ${APP_NAME:-myapp}-redis
     restart: unless-stopped
@@ -54,6 +56,8 @@ services:
 
   # MailHog (Email Testing)
   mailhog:
+    env_file:
+      - .env.docker      
     image: mailhog/mailhog:latest
     container_name: ${APP_NAME:-myapp}-mailhog
     restart: unless-stopped
