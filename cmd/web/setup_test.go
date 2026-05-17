@@ -25,7 +25,7 @@ func TestMain(m *testing.M) {
 	session.Cookie.SameSite = http.SameSiteLaxMode
 	session.Cookie.Secure = true
 
-	testApp := Config{
+	testApp = Config{
 		Session:       session,
 		DB:            nil,
 		InfoLog:       log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime),
